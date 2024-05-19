@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: rgba(11, 51, 56, 1);
+  height: 100vh;
+  background-image: url(../public/images/noise.png);
+}
+html {
+  scroll-behavior: smooth;
+}
+.item_navbar {
+  position: relative;
+}
+.item_navbar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  background-color: rgb(233, 233, 233);
+
+  transition: 0.2s;
+}
+.item_navbar:hover::before {
+  transform: scale(1);
+  transform-origin: center;
+}
+.title_page {
+  position: relative;
+}
+.title_page::before {
+  content: "Up-to-date rates, fast exchange, many destinations";
+  position: absolute;
+  bottom: -50px;
+  font-size: clamp(20px, 4vw, 40px);
+  width: 100%;
+  left: 0;
+  color: rgba(255, 255, 255, 0.377);
+}
+.btn_wrap:hover .arrow {
+  transform: translateX(5px);
+}
+.arrow {
+  transition: 0.2s ease-out;
+}
+.send,
+.recieve {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.change_send,
+.change_receive {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(85, 228, 247);
+}
+.select_coin {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.active {
+  transform: scale(0);
+}
+.more_faq {
+  border-radius: 0 0 0.5rem 0.5rem;
+  border-width: 1px;
+}
+@media (max-width: 1800px) {
+  .sda {
+    gap: 20px;
+  }
+  .sda div {
+    width: 100%;
+  }
+  .flex-row-reverse {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: column-reverse;
+  }
+  .btns_group {
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+  }
+  .group_info {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    gap: 10px;
+  }
+}
+.title_page {
+  font-size: clamp(30px, 4vw, 60px);
+}
+@media (max-width: 930px) {
+  .group_info {
+    flex-direction: column;
+  }
+  .group_info span {
+    width: 100%;
+  }
+  .cont_rec {
+    width: 80%;
+  }
+  .cont_faq {
+    width: 80%;
+  }
+  .rules_cont {
+    max-height: 400px;
+    overflow: auto;
+    padding: 30px;
+  }
+}
+@media (max-width: 550px) {
+  .cont_rec {
+    width: 95%;
+  }
+  .cont_faq {
+    width: 95%;
+  }
+}
