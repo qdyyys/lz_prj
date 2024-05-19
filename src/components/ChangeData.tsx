@@ -40,7 +40,7 @@ const ChangeData: React.FC = () => {
     "opacity-0",
     "font-bold",
   ]);
-  const [sendIsShow, setSendIsShow] = useState<boolean>(true);
+  const [sendIsShow, setSendIsShow] = useState<boolean>(false);
   const [receiveClasses, setReceiveClasses] = useState<string[]>([
     "absolute",
     "top-full",
@@ -56,14 +56,14 @@ const ChangeData: React.FC = () => {
     "opacity-0",
     "font-bold",
   ]);
-  const [receiveIsShow, setReceiveIsShow] = useState<boolean>(true);
+  const [receiveIsShow, setReceiveIsShow] = useState<boolean>(false);
   const [reverse, setReverse] = useState<boolean>(true);
 
   const symbols = /[A-Za-zA-Яа-яЁё]/g;
 
   useEffect(() => {
     fetch(
-      "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD"
+      "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD"
     )
       .then((res) => res.json())
       .then((data) => {
