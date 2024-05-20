@@ -59,7 +59,7 @@ const ChangeData: React.FC = () => {
   const [receiveIsShow, setReceiveIsShow] = useState<boolean>(false);
   const [reverse, setReverse] = useState<boolean>(true);
 
-  const symbols = /[A-Za-zA-Яа-яЁё]/g;
+  const symbols = /[^0-9.]/g;
 
   useEffect(() => {
     fetch(
@@ -185,6 +185,7 @@ const ChangeData: React.FC = () => {
 
   const flexReverse = () => {
     setReverse(!reverse);
+    console.log(reverse);
   };
 
   const valueCheck = () => {
@@ -271,7 +272,9 @@ const ChangeData: React.FC = () => {
         <div className="text-white mb-10">
           <input
             className="w-full mt-5 py-3 px-5 bg-transparent outline-none border-customBlue/40 border rounded-lg  hover:border-customBlue transition-all"
-            placeholder={`Your ${receiveName} wallet`}
+            placeholder={`Your ${
+              reverse === true ? receiveName : coinName
+            } wallet`}
           />
         </div>
       </div>
