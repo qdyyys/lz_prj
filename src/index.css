@@ -79,10 +79,10 @@ html {
     width: 100%;
   }
   .flex-row-reverse {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .flex-row {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .btns_group {
     flex-direction: column;

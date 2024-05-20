@@ -273,7 +273,7 @@ const ChangeData: React.FC = () => {
           <input
             className="w-full mt-5 py-3 px-5 bg-transparent outline-none border-customBlue/40 border rounded-lg  hover:border-customBlue transition-all"
             placeholder={`Your ${
-              reverse === true ? receiveName : coinName
+              reverse === true ? coinName : receiveName
             } wallet`}
           />
         </div>
